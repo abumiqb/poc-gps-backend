@@ -11,7 +11,7 @@ RUN chmod +x gradlew && ./gradlew bootJar --no-daemon
 FROM eclipse-temurin:21-jre
 WORKDIR /app
 
-ENV SPRING_PROFILES_ACTIVE=dev
+ENV SPRING_PROFILES_ACTIVE=unraid
 ENV SERVER_PORT=8080
 
 COPY --from=build /app/build/libs/*.jar app.jar

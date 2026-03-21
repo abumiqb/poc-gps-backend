@@ -1,0 +1,10 @@
+app:
+  environment:
+    name: unraid
+    backend-base-url: ${APP_BACKEND_BASE_URL:http://localhost:${SERVER_PORT:8080}}
+    frontend-base-url: ${APP_FRONTEND_BASE_URL:}
+    h2-console-url: ${APP_H2_CONSOLE_URL:http://localhost:${SERVER_PORT:8080}/h2-console}
+    h2-jdbc-url: jdbc:h2:mem:gpsdb
+
+server:
+  port: ${SERVER_PORT:8080}
