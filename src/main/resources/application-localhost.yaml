@@ -1,0 +1,10 @@
+app:
+  environment:
+    name: localhost
+    backend-base-url: http://localhost:8280
+    frontend-base-url: http://localhost:3000
+    h2-console-url: http://localhost:8280/h2-console
+    h2-jdbc-url: jdbc:h2:mem:gpsdb
+
+server:
+  port: 8280
