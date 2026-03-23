@@ -10,7 +10,7 @@
   <Support>https://github.com/abumiqb/poc-gps-backend</Support>
   <Project>https://github.com/abumiqb/poc-gps-backend</Project>
   <ReadMe />
-  <Overview>Proof-of-concept Spring Boot GPS tracking backend with REST, WebSocket live updates, in-memory H2 database, and Swagger UI. If you change the container port in Unraid, set SERVER_PORT to the same value.</Overview>
+  <Overview>Proof-of-concept Spring Boot GPS tracking backend with REST, WebSocket live updates, in-memory H2 database, and Swagger UI. Internal container port is fixed at 8080; only the host port should be changed in Unraid.</Overview>
   <Category>Network:Other</Category>
   <WebUI>http://[IP]:[PORT:8080]/swagger-ui</WebUI>
   <TemplateURL />
@@ -22,7 +22,6 @@
   <DonateText />
   <DonateLink />
   <Requires />
-  <Config Name="WebUI" Target="8080" Default="8080" Mode="tcp" Description="Port mapping for the backend. Host Port can be changed freely. If you change the Container Port, set SERVER_PORT to the same value." Type="Port" Display="always" Required="true" Mask="false">8080</Config>
-  <Config Name="Server Port" Target="SERVER_PORT" Default="8080" Mode="" Description="Spring Boot listen port inside the container. Keep this equal to the Container Port in the WebUI mapping above." Type="Variable" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="WebUI" Target="8080" Default="8080" Mode="tcp" Description="Port mapping for the backend. Leave Container Port at 8080 and only change Host Port when needed." Type="Port" Display="always" Required="true" Mask="false">8080</Config>
   <Config Name="Spring Profile" Target="SPRING_PROFILES_ACTIVE" Default="unraid" Mode="" Description="Spring profile used inside the container" Type="Variable" Display="always" Required="true" Mask="false">unraid</Config>
 </Container>

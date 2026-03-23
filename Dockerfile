@@ -12,10 +12,9 @@ FROM eclipse-temurin:21-jre
 WORKDIR /app
 
 ENV SPRING_PROFILES_ACTIVE=unraid
-ENV SERVER_PORT=8080
 
 COPY --from=build /app/build/libs/*.jar app.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["sh", "-c", "java -Dserver.port=${SERVER_PORT:-8080} -jar /app/app.jar"]
+ENTRYPOINT ["java", "-Dserver.port=8080", "-jar", "/app/app.jar"]
